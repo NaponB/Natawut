@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Natawut</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+  
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">  
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                      
+      </button>
+      <a class="navbar-brand" href="#">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="">ข้อมูลพื้นฐาน</a></li>
+            <li ><a href="">ข้อมูลหลัก</a></li>
+            <li ><a href="">รายการอาหาร</a></li>
+            <li ><a href="">วัตถุดิบ</a></li>
+            <li ><a href="">โปรโมชั่น</a></li>
+            <li ><a href="">การขายอาหาร</a></li>
+            <li ><a href="">ออกรายงาน</a></li>
+            <li ><a href="">สั่งจอง</a></li>
+            <li ><a href="">ออกจากระบบ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav hidden-xs"><br>
+      <i href="#" class="a"><img class="home" src="img/user.png">&nbsp;&nbsp; ผู้ใช้ระบบ : Thararat</i>
+      <hr>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a href="index2.php" class="a">หน้าหลัก</a></li>
+        <li class=""><!--active-->
+        <a data-toggle="collapse" href="#collapse1" class="a">ข้อมูลพื้นฐาน&nbsp;&nbsp;&nbsp;
+        <span class="caret"></span></a>
+          <div id="collapse1" class="panel-collapse collapse">
+            <ul class="list-group">
+              <li class="list-group-item"><a href="namber.php">หน่วยนับ</a></li>
+              <li class="list-group-item"><a href="typefood.php">ประเภทอาหาร</a></li>
+              <li class="list-group-item"><a href="size.php">ขนาดอาหาร</a></li>
+              <li class="list-group-item"><a href="tablefood.php">โต๊ะอาหาร</a></li>
+              <li class="list-group-item"><a href="branch.php">สาขา</a></li>
+            </ul>
+          </div>
+        </li>
+        <li >
+        <a data-toggle="collapse" href="#collapse2" class="a">ข้อมูลหลัก&nbsp;&nbsp;&nbsp;
+        <span class="caret"></span></a>
+          <div id="collapse2" class="panel-collapse collapse">
+              <ul class="list-group">
+                <li class="list-group-item"><a href="agent.php">ตัวแทนจำหน่าย</a></li>
+                <li class="list-group-item"><a href="customer.php">ลูกค้า</a></li>
+              </ul>    
+            </div>
+        </li>
+        <li ><a href="menufood.php" class="a">รายการอาหาร</a></li>
+        <li >
+        <a data-toggle="collapse" href="#collapse3" class="a">วัตถุดิบ&nbsp;&nbsp;&nbsp;
+            <span class="caret"></span></a>
+          <div id="collapse3" class="panel-collapse collapse">
+            <ul class="list-group">
+              <li class="list-group-item"><a href="raw.php">วัตถุดิบ</a></li>
+              <li class="list-group-item"><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a></li>
+              <li class="list-group-item"><a href="inputraw.php">รับเข้าวัตถุดิบ</a></li>
+              <li class="list-group-item"><a href="ream_raw.php">เบิกจ่ายวัตถุดิบ</a></li>            
+            </ul>    
+          </div>
+        </li>
+        <li ><a href="promoction.php" class="a">โปรโมชั่น</a></li>
+        <li ><a href="sell_food.php" class="a">การขายอาหาร</a></li>
+        <li ><a href="report.php" class="a">ออกรายงาน</a></li>
+        <li ><a href="book_food.php" class="a">สั่งจอง</a></li>
+        <li ><a href="" class="a">ออกจากระบบ</a></li>
+      </ul><br>
+    </div><br>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+        <div class="col-md-8">
+          <h4><small><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a>&nbsp;&nbsp; <img class="next" src="img/next.png"></span> เพิ่มข้อมูลการสั่งซื้อวัตถุดิบ</small></h4>
+        </div>
+        <div class="col-md-4">
+          <form class="" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="q">
+                <div class="input-group-btn">
+                    <button class="btn btn-primary" type="submit"><img class="plus" src="img/searcher.png"></button>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+        <hr>
+      </div>
+      <br><br>
+      <div class="col-sm-2"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10">
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-5">
+                <div class="well">
+                <?
+                  @include('conn.php');
+                  $new_id =mysql_result(mysql_query("Select Max(substr(ordraw_id,-3))+1 as MaxID from  orderraw"),0,"MaxID");
+                  if($new_id==''){ // ถ้าได้เป็นค่าว่าง หรือ null ก็แสดงว่ายังไม่มีข้อมูลในฐานข้อมูล
+                        $ordraw_id="ORD001";
+                    }else{
+                        $ordraw_id="ORD".sprintf("%03d",$new_id);//ถ้าไม่ใช่ค่าว่าง
+                    }
+                ?>
+                  <label for="">รหัสการสั่งวัตถุดิบ</label>
+                  <input type="text" class="form-control" id="ordraw_id" value="<?echo "$ordraw_id";?>" disabled>
+                  <br>
+                  <label for="">วันที่สั่งซื้อ</label>
+                  <input type="date" class="form-control" id="ord_date" >
+                  <br>
+                  <label for="">ชื่อพนักงาน</label>
+                  <input type="text" class="form-control" id="emp_name" >
+                  <br>
+                  <label for="">ชื่อบริษัท</label>
+                  <select class="form-control" id="bus_name">
+                     <?
+                      @include('conn.php');
+                        $strSQL2 = "SELECT  * FROM agent";
+                        $objQuery2 = mysql_query($strSQL2) or die("Error Query [".$strSQL2."]");
+                        while ($objReSult3 = mysql_fetch_array($objQuery2)) {
+                    ?>
+                              <option value="<?echo $objReSult3['agent_id'];?>"><?echo $objReSult3['bus_name'];?></option>
+                <? } ?>
+                      </select>&nbsp;<i class="fa fa-asterisk" aria-hidden="true"></i>
+                  <br>
+                  <button type="button" class = "btn btn-success" onclick="submitData()">เพิ่ม</button>
+                  <a class="btn btn-primary" href="detailord.php" role="button">ถัดไป</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</body>
+
+<script>
+  function submitData(){
+  var ordraw_id = $('#ordraw_id').val();
+  var bus_name =$('#bus_name').val();
+  var emp_name =$('#emp_name').val();
+  var ord_date =$('#ord_date').val();
+  if(ordraw_id === ""){
+    alert('กรุณากรอกข้อมูลให้ครบถ้วน !!');
+    return;
+  }else{
+     //alert(eats);
+   $.ajax({
+  type: "POST",
+  url: "insert_ordraw.php",
+  data: { 'ordraw_id': ordraw_id,
+    'bus_name' : bus_name,
+    'emp_name' : emp_name,
+    'ord_date' : ord_date
+  }
+})
+   //window.location="detailord.php";
+  .done(function( msg ) {
+      // alert( "Send Data : " + msg);
+     //$('#myModal').modal('hide');
+  // alert(idFoo
+  window.location = 'detailord.php?ordraw_id='+ordraw_id;
+   });
+  }
+}
+</script>
+</html>

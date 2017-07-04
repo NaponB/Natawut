@@ -1,0 +1,9 @@
+diff a/add_input.php b/add_input.php	(rejected hunks)
+@@ -129,6 +129,7 @@
+                   <input type="text" class="form-control" id="emp_name" >
+                   <br>                  
+                   <label for="">วันที่รับเข้า</label>
++                  <input type="date" class="form-control" id="input_date" value="<?php echo date('d-m-Y'); ?>" min = "<?php echo date('d-m-Y'); ?>">
+                   <br>
+                   <label for="">สาขา</label>
+                   <select class="form-control" id="branch">

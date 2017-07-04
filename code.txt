@@ -1,0 +1,47 @@
+<div class="buttonHolder"> <input type="submit" name="submit" value="Enregistrer un autre activite" class="btn btn-primary btn-primary pull-right" id="submit-id-submit">
+
+</div>
+
+order_food
+<div class="col-md-2">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><span></span>??</h3>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">Internet
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">Television
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a href="cooking.php"><button type="button" class="btn btn-success">?????????????????</button></a>
+
+    <style>
+    /* Add a gray background color and some padding to the footer 
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .carousel-inner img {
+      width: 100%; /* Set width to 100% 
+      min-height: 200px;
+    }
+     Hide the carousel text when the screen is less than 600 pixels wide 
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none; 
+      }
+    }*/
+  </style>

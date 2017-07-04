@@ -1,0 +1,10 @@
+diff a/det_input.php b/det_input.php	(rejected hunks)
+@@ -180,7 +180,7 @@
+                                   <br>
+                                 </div>
+                                 <div class="modal-footer">
+-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
++                                  <button type="button" class="btn btn-default" data-dismiss="modal"></button>
+                                 </div>
+                               </div>
+                             </div>
