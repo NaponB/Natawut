@@ -14,7 +14,7 @@
 <body>
     <header class="nk-header">
         <!--START: Navbar-->
-        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-white-text-on-top box-sha">
+        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-white-text-on-top">
             <div class="container">
                 <div class="nk-nav-table">
                     <a href="" class="nk-nav-logo">
@@ -234,8 +234,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <div class="text-xs-center">Donec orci sem, pretium ac dolor et, faucibus faucibus mauris. Etiam,pellentesque faucibus. Vestibulum gravida volutpat ipsum non ultrices.
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -725,31 +724,13 @@
             <div class="nk-footer-cont">
                 <div class="container text-xs-center">
                     <div class="nk-footer-social">
-                        <ul>
-                            <li><a href="https://twitter.com/nkdevv"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.facebook.com/unvabdesign/"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://dribbble.com/_nK"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="https://www.instagram.com/unvab/"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
+                        มหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
                     </div>
                 </div>
             </div>
         </footer>
         <!-- END: Footer -->
-
-
     </div>
-
-
-
-
-    <!-- START: Scripts -->
-
-    <script src="assets/js/combined.js"></script>
-    
-    <!-- END: Scripts -->
-
-
+<script src="assets/js/combined.js"></script>
 </body>
-
 </html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?@include('conn.php') ?>
 <html lang="en">
 <head>
   <title>Natawut</title>
@@ -127,15 +128,24 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><?//echo $objReSult['ordraw_id'];?></td>
-                    <td><?//echo $objReSult['date'];?></td>
-                    <td><?//echo $objReSult['emp_name'];?></td>
-                    <td><?//echo $objReSult['bus_name'];?></td>
-                    <td><?//echo $objReSult['bus_name'];?></td>
+                   <?
+                                $a = 1;
+                                    $strSQL = "SELECT *, DATE_FORMAT(sell_date,'%d-%m-%Y %h:%i') as sell_date FROM sell_order";
+                                    $objQuery = mysql_query($strSQL) or die("Error Query [".$strSQL."]");
+                                    while ($objReSult = mysql_fetch_array($objQuery)) {
+                   ?>
+                    <td><?echo $objReSult['sell_id'];?></td>
+                    <td><?echo $objReSult['emp_name'];?></td>
+                    <td><?echo $objReSult['branch'];?></td>
+                    <td><?echo $objReSult['table_id'];?></td>
+                    <td><?echo $objReSult['sell_date'];?></td>
                     <td>
                       <a href="order_food.php"><button type="button" class="btn btn-success">สั่งอาหารเพิ่ม</button></a>
                       <a href="cal_food.php"><button type="button" class="btn btn-success">คิดเงินค่าอาหาร</button></a>
                     </td>
+                    <?
+                    }
+                    ?>
                   </tr>
                 </tbody>
               </table>

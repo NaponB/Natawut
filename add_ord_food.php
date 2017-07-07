@@ -120,9 +120,9 @@
                     <?                      
                       $new_id =mysql_result(mysql_query("Select Max(substr(sell_id,-3))+1 as MaxID from  sell_order"),0,"MaxID");
                       if($new_id==''){ // ถ้าได้เป็นค่าว่าง หรือ null ก็แสดงว่ายังไม่มีข้อมูลในฐานข้อมูล
-                            $sell_id="S001";
+                            $sell_id="SE001";
                         }else{
-                            $sell_id="S".sprintf("%03d",$new_id);//ถ้าไม่ใช่ค่าว่าง
+                            $sell_id="SE".sprintf("%03d",$new_id);//ถ้าไม่ใช่ค่าว่าง
                         }
           ?>
                         <div class="container">

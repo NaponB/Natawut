@@ -236,7 +236,7 @@
                                 </div>
                                 <br>
                                 <br>
-                                <button type="button" class="btn btn-success" onclick="test()">เพิ่ม</button>
+                                <!--<button type="button" class="btn btn-success" onclick="test()">เพิ่ม</button>-->
                             </div>
                     </div>
                     <div class="col-sm-7">

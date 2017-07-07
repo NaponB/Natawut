@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2017 at 05:27 AM
+-- Generation Time: Jul 07, 2017 at 09:16 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -136,6 +136,27 @@ CREATE TABLE `detail_ream` (
 
 INSERT INTO `detail_ream` (`de_ream_id`, `ream_id`, `raw_id`, `amount`, `unit_id`) VALUES
 ('DREA001', 'REA001', 'R005', 5, 'U02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `de_sell`
+--
+
+CREATE TABLE `de_sell` (
+  `de_sell_id` varchar(6) NOT NULL,
+  `sell_id` char(5) NOT NULL,
+  `menu_id` varchar(4) NOT NULL,
+  `price` int(4) NOT NULL,
+  `amount` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `de_sell`
+--
+
+INSERT INTO `de_sell` (`de_sell_id`, `sell_id`, `menu_id`, `price`, `amount`) VALUES
+('DS0001', 'SE001', 'M009', 90, 3);
 
 -- --------------------------------------------------------
 
@@ -329,12 +350,19 @@ INSERT INTO `ream_raw` (`ream_id`, `emp_name`, `branch`, `ream_date`) VALUES
 --
 
 CREATE TABLE `sell_order` (
-  `sell_id` char(4) NOT NULL,
+  `sell_id` char(5) NOT NULL,
   `emp_name` varchar(20) NOT NULL,
   `branch` char(3) NOT NULL,
   `table_id` char(4) NOT NULL,
   `sell_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `sell_order`
+--
+
+INSERT INTO `sell_order` (`sell_id`, `emp_name`, `branch`, `table_id`, `sell_date`) VALUES
+('SE001', 'Test', '1', 'T001', '2017-06-30 10:32:00');
 
 -- --------------------------------------------------------
 
@@ -564,6 +592,12 @@ ALTER TABLE `detail_order`
 --
 ALTER TABLE `detail_ream`
   ADD PRIMARY KEY (`de_ream_id`);
+
+--
+-- Indexes for table `de_sell`
+--
+ALTER TABLE `de_sell`
+  ADD PRIMARY KEY (`de_sell_id`);
 
 --
 -- Indexes for table `employee`
