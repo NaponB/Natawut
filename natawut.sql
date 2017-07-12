@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2017 at 09:16 AM
+-- Generation Time: Jul 12, 2017 at 10:10 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -261,6 +261,21 @@ CREATE TABLE `orderraw` (
 INSERT INTO `orderraw` (`ordraw_id`, `date`, `emp_name`, `bus_name`, `status`) VALUES
 ('ORD001', '2017-06-13', 'Hi', 'A002', 0),
 ('ORD002', '2017-06-13', 'Test', 'A001', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promotion`
+--
+
+CREATE TABLE `promotion` (
+  `promo_id` varchar(5) NOT NULL,
+  `promo_name` varchar(20) NOT NULL,
+  `promo_start` date NOT NULL,
+  `promo_end` date NOT NULL,
+  `promo_amount` int(4) NOT NULL,
+  `promo_percen` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -628,6 +643,12 @@ ALTER TABLE `menu`
 ALTER TABLE `orderraw`
   ADD PRIMARY KEY (`ordraw_id`),
   ADD KEY `bus_name` (`bus_name`);
+
+--
+-- Indexes for table `promotion`
+--
+ALTER TABLE `promotion`
+  ADD PRIMARY KEY (`promo_id`);
 
 --
 -- Indexes for table `raw`

@@ -11,7 +11,7 @@
             <link rel="stylesheet" href="css/style.css">
             <script src="js/jquery.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
-            <script type="js/npm.js"></script>>
+            <script type="js/npm.js"></script>
         </head>
         <style>
 
@@ -198,7 +198,7 @@
                                                                                     <?echo $objReSult9['size_name'];?>
                                                                                 </td>
                                                                                 <td>
-                                                                                    <?echo $objReSult4['menu_price'];?>                                              <input type="hidden" name="price[]" value="<?echo $objReSult4['menu_price'];?>>"                                    
+                                                                                    <?echo $objReSult4['menu_price'];?>                                              <input type="hidden" name="price[]" value="<?echo $objReSult4['menu_price'];?>>" >                                  
                                                                                 </td>
                                                                                 <td>
                                                                                     <div class="input-group number-spinner">
@@ -269,7 +269,53 @@
                                         <td><?echo $objReSult5['amount'];?></td>                         
                                         <td><?echo $objReSult5['price'] * $objReSult5['amount'];?></td>
                                         <td>
-                                            <button type="button" class="btn btn-default">แก้ไข</button>
+                                            <button type="button" class="btn btn-default" data-toggle="modal" title="อ่านข้อมูลเพิ่มเติม" onclick="" data-target="#myModal2">แก้ไข</button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="myModal2" role="dialog">
+                                                    <div class="modal-dialog modal-lg">
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="modal-title">แก้ไขรายการอาหาร</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>ที่</th>
+                                                                            <th>รายการอาหาร</th>
+                                                                            <th>จำนวน</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td>
+                                                                                <div class="input-group number-spinner">
+                                                                                    <span class="input-group-btn">
+                                                                    <button class="btn2"  onclick="minus(count<?echo "$y";?>)">-</button>
+                                                                </span>
+                                                                                        <input type="button" class="form-control" name="amount[]" id="count<?echo "$y";?>" value="1">
+                                                                                        <span class="input-group-btn">
+                                                                    <input type="hidden" id="chcheck" value="count<?echo "$y";?>">
+                                                                     <button class="btn3" onclick="plus(count<?echo "$y";?>)">+</buttton>
+                                                                </span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">บันทึก</button>
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             <button type="button" class="btn btn-default">ลบ</button>
                                         </td>
                                     </tr>
