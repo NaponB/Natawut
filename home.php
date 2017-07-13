@@ -18,10 +18,31 @@
             </div>
         </div>
         <div class="col-xs-12">
-        
+            <nav>
+                <ul class="left">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">كيف أساعدك؟</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="col-xs-12">
-        
+            <table style="width:100%">
+              <tr>
+                <td></td>
+                <td>
+                </td>
+                <td>Smith</td> 
+                <td>50</td>
+              </tr>
+            </table>
         </div>
         <div class="col-xs-12">
             <div class="box-3">
