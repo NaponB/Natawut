@@ -77,7 +77,7 @@
               <li class="list-group-item"><a href="raw.php">วัตถุดิบ</a></li>
               <li class="list-group-item"><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a></li>
               <li class="list-group-item"><a href="inputraw.php">รับเข้าวัตถุดิบ</a></li>
-              <li class="list-group-item"><a href="ream_raw.php">เบิกจ่ายวัตถุดิบ</a></li>            
+              <li class="list-group-item"><a href="reamraw.php">เบิกจ่ายวัตถุดิบ</a></li>            
             </ul>    
           </div>
         </li>
@@ -91,7 +91,7 @@
       <div class="col-sm-2"></div>
       <div class="col-sm-10">
         <div class="col-md-8">
-          <h4><small>เบิกจ่ายวัตถุดิบ</small></h4>
+          <h4><small><a href="reamraw.php">ข้อมูลเบิกจ่ายวัตถุดิบ</a>&nbsp;&nbsp; <img class="next" src="img/next.png">&nbsp;&nbsp;เพิ่มข้อมูลเบิกจ่ายวัตถุดิบ</small></h4>
         </div>
         <div class="col-md-4">
           <form class="" role="search">

@@ -1,3 +1,4 @@
+<?@include('conn.php')?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -269,7 +270,7 @@
                 </div>
                 <div class="col-sm-7">
                     <button type="button" class="btn btn-default" onclick="lastSubmit()">ยืนยันการสั่งซื้อ</button>
-                    <a class="btn btn-primary" href="purchase_order.php" role="button">พิมพ์ใบความต้องการสั่งซื้อวัตถุดิบ</a>
+                    <a class="btn btn-primary" href="purchase_order.php?ordraw_id=<?echo $_GET['ordraw_id'];?>" role="button">พิมพ์ใบความต้องการสั่งซื้อวัตถุดิบ</a>
                 </div>
             </div>
         </div>

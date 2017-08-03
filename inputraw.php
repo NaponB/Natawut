@@ -77,7 +77,7 @@
               <li class="list-group-item"><a href="raw.php">วัตถุดิบ</a></li>
               <li class="list-group-item"><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a></li>
               <li class="list-group-item"><a href="inputraw.php">รับเข้าวัตถุดิบ</a></li>
-              <li class="list-group-item"><a href="ream_raw.php">เบิกจ่ายวัตถุดิบ</a></li>            
+              <li class="list-group-item"><a href="reamraw.php">เบิกจ่ายวัตถุดิบ</a></li>            
             </ul>    
           </div>
         </li>
@@ -118,10 +118,10 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>รหัสการสั่งซื้อ</th>
-                    <th>วันที่สั่งซื้อ</th>
+                    <th>รหัสการรับเข้า</th>
+                    <th>วันที่รับเข้า</th>
                     <th>ชื่อพนักงาน</th>
-                    <th>ชื่อบริษัท</th>
+                    <th>รหัสการสั่ซื้อ</th>
                     <th>การจัดการ</th>
                   </tr>
                 </thead>
@@ -138,7 +138,6 @@
                     <td><?echo $objReSult['emp_name'];?></td>
                     <td><?echo $objReSult['ordraw_id'];?></td>
                     <td>
-                      <button type="button" class="btn btn-default">พิมพ์</button>
                       <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">รายละเอียด</button>
                           <!-- Modal -->
                           <div class="modal fade" id="myModal" role="dialog">

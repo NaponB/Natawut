@@ -1,3 +1,4 @@
+<?@include('conn.php')?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,21 +125,36 @@
                   </tr>
                 </thead>
                 <tbody>
+                <?
+                                $a = 1;
+                                $total = 0;
+                                    $strSQL = "SELECT * FROM de_sell";
+                                    $objQuery = mysql_query($strSQL) or die("Error Query [".$strSQL."]");
+                                    while ($objReSult = mysql_fetch_array($objQuery)) {
+                                      $strSQL2 = "SELECT * FROM menu where menu_id = '".$objReSult['menu_id']."' ";
+                                    $objQuery2 = mysql_query($strSQL2) or die("Error Query [".$strSQL2."]");
+                                    while ($objReSult2 = mysql_fetch_array($objQuery2)) {
+                   ?>
                   <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>Doe</td>
-                    <td>Doe</td>
-                    <td>Doe</td>
+                    <td><?echo $a;?></td>
+                    <td><?echo $objReSult2['menu_name'];?></td>
+                    <td><?echo $objReSult['price'];?></td>
+                    <td><?echo $objReSult['amount'];?></td>
+                    <td><?echo $objReSult['price'] * $objReSult['amount'];?></td>
                     <td>
                       <button type="button" class="btn btn-default">แก้ไข</button>
                       <button type="button" class="btn btn-default">ลบ</button>
                     </td>
                   </tr>
+                  <?
+                  $total = $total + ($objReSult['price'] * $objReSult['amount']);
+                  } 
+                }
+                  ?>
                 </tbody>
                 <thead>
                     <tr>
-                      <td colspan="5">ราคารวม</td>
+                      <td colspan="5">ราคารวม <?echo $total;?></td>
                       <td></td>
                     </tr>
                   </thead>
@@ -149,18 +165,29 @@
           <div class="well">
             <h3>คำนวนเงินค่าอาหาร</h3><br>
             <label for="">รับเงิน</label>
-            <input type="email" class="form-control" id="email">
+            <input type="text" class="form-control" id="pay">
             <br>
             <label for="">ค่าอาหาร</label>
-            <input type="email" class="form-control" id="email" disabled>
+            <input type="text" class="form-control" id="price" value="<?echo $total;?>" disabled>
             <br>
             <label for="">เงินทอน</label>
-            <input type="email" class="form-control" id="email" disabled>
+            <input type="text" class="form-control" id="change" disabled>
             <br>
+            <input type="button" class="" id="think" value="คำนวณ" onclick="cal()">
             <a href="bill_food.php" type="button" class="btnn2 btn btn-success">พิมพ์ใบเสร็จรับเงิน</a> 
           </div>
         </div>
   </div>
 </div>
 </body>
+<script>
+
+function cal() 
+{
+  var sum = $('#pay').val();
+  var price = $('#price').val();
+  var total = sum - price;
+  $('#change').val(total);
+  }
+</script>
 </html>

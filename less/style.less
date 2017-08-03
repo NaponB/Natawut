@@ -8,7 +8,11 @@ body {
     background-color:#FFFFFF;
 }         
 @font-face {
-        
+    font-family: FontAwesome;
+    src: url('font-awesome/font/fontawesome-webfont.eot');
+    src: url('font-awesome/font/fontawesome-webfont.eot?') format('embedded-opentype'),
+         url('font-awesome/font/fontawesome-webfont.woff') format('woff'),
+         url('font-awesome/font/fontawesome-webfont.ttf') format('truetype');
 }
 footer {
     background-color: #f2f2f2;
@@ -36,8 +40,8 @@ footer {
   background-color: #8B0000;
 }
 .home {
-    width: 40px;
-    height: 38px;
+    width: 36px;
+    height: 34px;
 }
 .logout{
   width: 20px;
@@ -52,8 +56,8 @@ footer {
     height: 10px;
 }
 .asterisk {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
 }
 .img-rounded{
     margin-left: -200px;
@@ -66,7 +70,6 @@ footer {
 .a{
     color: #F5F5F5;
 }
-
 .active{
   color: #F5F5F5;
 }
@@ -373,47 +376,53 @@ label {
     border-color:#fff;
 }
 ///start home
-.box-2{
-  width: 100%;
-  height: 100px;
+.box-1{
+  height: 200px;
   background-color: red;
 }
 //background-image:url('http://vira1368.persiangig.com/bootstrap%20template/full-slider/images/slide-1.jpg');
-.box-3{
-  width: 100%;
-  height: 150px;
-  background-color: #D3D3D3;
-}
-.right, .left {       
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #222;
-}
-.left {       
-    float: left
-}
+h1,h2,h3,h4{
+        font-weight: 500;
+        letter-spacing: 0.7px;
+        margin: 0px;
+      }
+      p{
+        margin: 0px;
+        color: #555;
+        font-size: 15px;
+        line-height: 22px;
+      }
+      a{
 
-.left li {
-    float: left
-}
-
-.right li {
-    float: right
-}
-
-li a {
-    display: inline-block;
-    padding: 18px 20px;
-    text-decoration: none;
-    color: #fff
-}
-
-li a:hover {
-    background-color: #fff;
-    color: #222
-}
+      }
+      /* top-nav */
+      .top-nav{
+        background-color: #ccc;
+        color: #000;
+        padding: 6px 15px;
+      }
+      /* navbar */
+      .navbar{
+        min-height: 70px;
+        margin-bottom: 0px;
+      }
+      .navbar-nav>li>a {
+        font-size: 15px;
+        line-height: 3.428571;
+        font-weight: 400;
+      }
+      .navbar-default .navbar-nav>li>a:hover{
+        color: #f00;
+        box-shadow: 0px 20px 0px -18px #FF0000;
+      }
+      .navbar-brand {
+        padding:0px 15px;
+        line-height: 3.428571;
+      }
+      .add{
+        color: #f00;
+        box-shadow: 0px 20px 0px -18px #FF0000;
+      }
 ///end home
 .box-4{
   width: 100%;
@@ -430,24 +439,29 @@ div.tab {
 div.tab button {
     background-color: inherit;
     float: left;
-    border: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #8B0000;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
-    background-color: #ff5252;
+    color: #fff;
+    background-color: #B22222;
 
 }
 
 /* Change background color of buttons on hover */
 div.tab button:hover {
     background-color: #ff8a80;
+     color: #000;
 }
 
 /* Create an active/current tablink class */
 div.tab button.active {
-    background-color: #ff8a80;
+    background-color: #CD5C5C;
+    color: #000;
 }
 
 
@@ -484,4 +498,3 @@ div.tab button.active {
   border-radius: 0px 5px 5px 0px;
 }
 ///end menufoo
-

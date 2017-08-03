@@ -7,6 +7,7 @@
   <meta name="author" content="nK">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <style>
@@ -77,7 +78,7 @@
               <li class="list-group-item"><a href="raw.php">วัตถุดิบ</a></li>
               <li class="list-group-item"><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a></li>
               <li class="list-group-item"><a href="inputraw.php">รับเข้าวัตถุดิบ</a></li>
-              <li class="list-group-item"><a href="ream_raw.php">เบิกจ่ายวัตถุดิบ</a></li>            
+              <li class="list-group-item"><a href="reamraw.php">เบิกจ่ายวัตถุดิบ</a></li>            
             </ul>    
           </div>
         </li>
@@ -154,8 +155,8 @@
                      <td><?echo $objReSult['unit_id'];?></td>
                      <td><?echo $objReSult['unit_name'];?></td>
                      <td>          
-                      <button type="button" class="btn btn-info" data-toggle="tooltip"  title="แก้ไขข้อมูล" onclick="updateId(<? echo "'".$objReSult["unit_id"]."'";?>)"><img class="plus" src="img/edit.png"></button>
-                      <button type="button" class="btn btn-warning" data-toggle="tooltip"  title="ลบข้อมูล" onclick="delData(<? echo "'".$objReSult["unit_id"]."'";?>)"><img class="plus" src="img/delete.png"></button>
+                      <button type="button" class="btn btn-default" data-toggle="tooltip"  title="แก้ไขข้อมูล" onclick="updateId(<? echo "'".$objReSult["unit_id"]."'";?>)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger" data-toggle="tooltip"  title="ลบข้อมูล" onclick="delData(<? echo "'".$objReSult["unit_id"]."'";?>)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                      </td>
                   </tr>
                   <?

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <style>
@@ -79,7 +79,7 @@
               <li class="list-group-item"><a href="raw.php">วัตถุดิบ</a></li>
               <li class="list-group-item"><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a></li>
               <li class="list-group-item"><a href="inputraw.php">รับเข้าวัตถุดิบ</a></li>
-              <li class="list-group-item"><a href="ream_raw.php">เบิกจ่ายวัตถุดิบ</a></li>            
+              <li class="list-group-item"><a href="reamraw.php">เบิกจ่ายวัตถุดิบ</a></li>            
             </ul>    
           </div>
         </li>
@@ -131,6 +131,9 @@
               <label for="">หมายเลขโต๊ะ &nbsp;&nbsp;&nbsp; <img class="asterisk" src="img/asterisk.png"></label>
               <input type="text" class="form-control" id="table_num" >
               <br>
+              <label for="">จำนวนคนที่นั่งได้ &nbsp;&nbsp;&nbsp; <img class="asterisk" src="img/asterisk.png"></label>
+              <input type="number" class="form-control" >
+              <br>
               <label for="">สาขา &nbsp;&nbsp;&nbsp; <img class="asterisk" src="img/asterisk.png"></label>
               <input type="text" class="form-control" id="branch" >
               <br>
@@ -166,8 +169,8 @@
                     <td><?echo $objReSult['branch'];?></td>
                     <td><?echo $objReSult['table_note'];?></td>
                     <td>
-                    <button type="button" class="btn btn-info" data-toggle="tooltip"  title="แก้ไขข้อมูล" onclick="updateId(<? echo "'".$objReSult["table_id"]."'";?>)"><img class="plus" src="img/edit.png"></button>
-                    <button type="button" class="btn btn-warning" data-toggle="tooltip"  title="ลบข้อมูล" onclick="delData(<? echo "'".$objReSult["table_id"]."'";?>)"><img class="plus" src="img/delete.png"></button>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip"  title="แก้ไขข้อมูล" onclick="updateId(<? echo "'".$objReSult["table_id"]."'";?>)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-danger" data-toggle="tooltip"  title="ลบข้อมูล" onclick="delData(<? echo "'".$objReSult["table_id"]."'";?>)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                   </td>
                   </tr> 
                   <? } ?>             

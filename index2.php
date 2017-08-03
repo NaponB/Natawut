@@ -1,3 +1,6 @@
+<?
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </head>
@@ -38,7 +42,7 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-2 sidenav hidden-xs"><br>
-      <i href="#" class="a"><img class="home" src="img/user.png">&nbsp;&nbsp; ผู้ใช้ระบบ : Thararat</i>
+      <i href="#" class="a"><img class="home" src="img/user.png">&nbsp;&nbsp; ผู้ใช้ระบบ : <?echo $_SESSION['user'];?></i>
       <hr>
       <ul class="nav nav-pills nav-stacked">
         <li class=""><!--active-->
@@ -73,7 +77,7 @@
               <li class="list-group-item"><a href="raw.php">วัตถุดิบ</a></li>
               <li class="list-group-item"><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a></li>
               <li class="list-group-item"><a href="inputraw.php">รับเข้าวัตถุดิบ</a></li>
-              <li class="list-group-item"><a href="ream_raw.php">เบิกจ่ายวัตถุดิบ</a></li>            
+              <li class="list-group-item"><a href="reamraw.php">เบิกจ่ายวัตถุดิบ</a></li>            
             </ul>    
           </div>
         </li>

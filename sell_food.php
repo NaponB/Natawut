@@ -140,13 +140,13 @@
                     <td><?echo $objReSult['table_id'];?></td>
                     <td><?echo $objReSult['sell_date'];?></td>
                     <td>
-                      <a href="order_food.php"><button type="button" class="btn btn-success">สั่งอาหารเพิ่ม</button></a>
+                      <a href="order_food.php?sell_id=<?echo $objReSult['sell_id'];?>"><button type="button" class="btn btn-success">สั่งอาหารเพิ่ม</button></a>
                       <a href="cal_food.php"><button type="button" class="btn btn-success">คิดเงินค่าอาหาร</button></a>
-                    </td>
-                    <?
+                    </td>                    
+                  </tr>
+                  <?
                     }
                     ?>
-                  </tr>
                 </tbody>
               </table>
               <!-- <nav aria-label="Page navigation">

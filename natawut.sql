@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2017 at 10:10 AM
+-- Generation Time: Jul 14, 2017 at 06:04 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -88,7 +88,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`cus_id`, `cus_fname`, `cus_lname`, `cus_add`, `cus_tel`, `cus_email`, `cus_pass`, `authen`, `status`, `note`) VALUES
-('C0001', 'Napon', 'Boonlao', 'Prachin', '0882240900', 'abcd', '123456', 0, 1, 'ปกติ');
+('C0001', 'Napon', 'Boonlao', 'Prachin', '0882240900', 'abcd', '123456', 0, 1, 'ปกติ'),
+('C0002', 'hi', 'test', 'dfasdsad', '0882240900', 'oat@hotmail.com', '123456', 0, 0, '');
 
 -- --------------------------------------------------------
 

@@ -1,4 +1,5 @@
-<?@include('conn.php');?>
+<?@include('conn.php');
+error_reporting(0);?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,12 +120,10 @@
                         <label>เลือกรายงานที่ต้องการ</label>
                         <select class="form-control" name="report" id="report">
                             <option>กรุณาเลือก</option>
-                            <option value="SELECT *, DATE_FORMAT(sell_date,'%d-%m-%Y') as sell_date FROM sell_order as d1
-                    INNER JOIN de_sell as d2 ON (d1.sell_id=d2.sell_id)
-                    ">รายงานสรุปยอดขาย</option>
-                            <option value="">รายงานสรุปรายรับ - รายจ่ายของร้าน</option>
-                            <option value="">รายงานสรุปการสั่งซื้อวัตถุดิบ</option>
-                            <option value="">รายงานสรุปรายการอาหารที่ขายดี</option>
+                            <option value="1">รายงานสรุปยอดขาย</option>
+                            <option value="2">รายงานสรุปรายรับ - รายจ่ายของร้าน</option>
+                            <option value="3">รายงานสรุปการสั่งซื้อวัตถุดิบ</option>
+                            <option value="4">รายงานสรุปรายการอาหารที่ขายดี</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -137,7 +136,7 @@
                             ถึง
                         </div>
                         <div class="form-group col-lg-5">
-                            <input type="date" id="end_date" name="end_date" class="form-control" " value=" ">
+                            <input type="date" id="end_date" name="end_date" class="form-control" value="">
           </div>
         </div>
         <div class="col-md-1 ">          
@@ -146,12 +145,16 @@
         </form>
       </div><br>
       <div class="col-sm-2 "></div>
+      <?
+    if ($_POST['report'] == 1) {
+    # code...
+    ?>
       <div class="col-sm-10 ">
         <hr>
       </div>
       <div class="col-sm-2 "></div>
       <div class="col-sm-10 ">
-        <h3 align="center">รายงานสรุปยอดขายตั้งแต่วันที่&nbsp;&nbsp;&nbsp; ถึงวันที่&nbsp;&nbsp;&nbsp;</h3><br>
+        <h3 align="center">รายงานสรุปยอดขายตั้งแต่วันที่&nbsp;&nbsp;&nbsp;<?echo $_POST['start_date'];?> ถึงวันที่&nbsp;&nbsp;&nbsp;<?echo $_POST['end_date'];?></h3><br>
         <div class="well well-sm ">
           <table class="table table-striped ">
             <thead align="center "> 
@@ -165,9 +168,10 @@
             </thead>
             <tbody>
             <?
-            error_reporting(0);
+            // error_reporting(0);
             $k = 1;
-            $sql1 = $_POST['report'];           
+            $sql1 = "SELECT *, DATE_FORMAT(sell_date,'%d-%m-%Y') as sell_date FROM sell_order as d1
+                                INNER JOIN de_sell as d2 ON (d1.sell_id=d2.sell_id)";
             $sql2 = "WHERE d1.sell_date BETWEEN '";
             $sql2 .= $_POST['start_date'];
             $sql2 .= "' AND '";
@@ -194,7 +198,129 @@
             </tbody>            
           </table>
         </div>
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        </div><?
+        }?>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <?
+    if ($_POST['report'] == 2) {
+    # code...
+
+      ?>
+      <div class="col-sm-10 ">
+        <hr>
+      </div>
+      <div class="col-sm-2 "></div>
+      <div class="col-sm-10 ">
+        <h3 align="center">รายงานสรุปยอดขายตั้งแต่วันที่&nbsp;&nbsp;&nbsp;<?echo $_POST['start_date'];?> ถึงวันที่&nbsp;&nbsp;&nbsp;<?echo $_POST['end_date'];?></h3><br>
+        <div class="well well-sm ">
+          <table class="table table-striped ">
+            <thead align="center "> 
+              <tr>
+                <th>ที่</th>
+                <th>วันที่</th>
+                <th>รายการขาย</th>
+                <th>จำนวน</th>                
+                <th>ยอดขาย(บาท)</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?
+            // error_reporting(0);
+            $k = 1;
+            $sql1 = "SELECT *, DATE_FORMAT(sell_date,'%d-%m-%Y') as sell_date FROM sell_order as d1
+                                INNER JOIN de_sell as d2 ON (d1.sell_id=d2.sell_id)";                
+            $sql2 = "WHERE d1.sell_date BETWEEN '";
+            $sql2 .= $_POST['start_date'];
+            $sql2 .= "' AND '";
+            $sql2 .= $_POST['end_date'];
+            $sql2 .= "';";                      
+              # code...
+            
+            $sql3 = $sql1.$sql2;
+            // echo $sql3;            
+            $objQuery = mysql_query($sql3) or die(mysql_error());
+            while ($objReSult = mysql_fetch_array($objQuery)) {
+            ?>
+              <tr>
+                <td><?echo $k;?></td>
+                <td><?echo $objReSult['sell_date'];?></td>
+                <td><?echo $objReSult['menu_id'];?></td>
+                <td><?echo $objReSult['amount'];?></td>
+                <td><?echo $objReSult['amount'] * $objReSult['price'];?></td>               
+              </tr>
+              <?
+              $k++;
+              }                
+              ?>
+            </tbody>            
+          </table>
+        </div>
+        </div><?
+        }?>
+<!--         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ -->        <?
+    if ($_POST['report'] == 3) {
+    # code...
+
+      ?>
+      <div class="col-sm-10 ">
+        <hr>
+      </div>
+      <div class="col-sm-2 "></div>
+      <div class="col-sm-10 ">
+        <h3 align="center">รายงานสรุปการสั่งซื้อวัตถุดิบตั้งแต่วันที่&nbsp;&nbsp;&nbsp;<?echo $_POST['start_date'];?> ถึงวันที่&nbsp;&nbsp;&nbsp;<?echo $_POST['end_date'];?></h3><br>
+        <div class="well well-sm ">
+          <table class="table table-striped ">
+            <thead align="center "> 
+              <tr>
+                <th>ที่</th>
+                <th>วันที่</th>
+                <th>รายการสั่งซื้อ</th>
+                <th>ราคา/หน่วย</th>
+                <th>จำนวน</th>
+                <th>หน่วยนับ</th>
+                <th>ราคารวม</th>
+                <th>ยอดซื้อสุทธิ</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?
+            // error_reporting(0);
+            $k = 1;
+            $sql1 = "SELECT *, DATE_FORMAT(date,'%d-%m-%Y') as date FROM orderraw as d1
+                                INNER JOIN detail_order as d2 ON (d1.ordraw_id=d2.ordraw_id)";
+                      
+            $sql2 = "WHERE d1.date BETWEEN '";
+            $sql2 .= $_POST['start_date'];
+            $sql2 .= "' AND '";
+            $sql2 .= $_POST['end_date'];
+            $sql2 .= "';";                      
+              # code...
+            
+            $sql3 = $sql1.$sql2;
+            // echo $sql3;            
+            $objQuery = mysql_query($sql3) or die(mysql_error());
+            while ($objReSult = mysql_fetch_array($objQuery)) {
+            ?>
+              <tr>
+                <td><?echo $k;?></td>
+                <td><?echo $objReSult['date'];?></td>
+                <td><?echo $objReSult['raw_id'];?></td>
+                <td><?echo $objReSult['raw_price'];?></td>
+                <td><?echo $objReSult['amount'];?></td>
+                <td><?echo $objReSult['unit_id'];?></td>
+                <td><?echo $objReSult['amount'] * $objReSult['raw_price'];?></td>                               
+                <td><?echo $objReSult['amount'];?></td>               
+              </tr>
+              <?
+              $k++;
+              }                
+              ?>
+            </tbody>            
+          </table>
+        </div>
+        </div><?
+        }?>
         <!-- <h3 align="center ">รายงานสรุปรายรับ - รายจ่ายของร้านตั้งแต่วันที่&nbsp;&nbsp;&nbsp; ถึงวันที่&nbsp;&nbsp;&nbsp;</h3><br>
         <div class="well well-sm ">
           <table class="table table-striped ">
@@ -275,7 +401,7 @@
           </table>
         </div>
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-      </div>
+      
     </div>
   </div>
 </div>

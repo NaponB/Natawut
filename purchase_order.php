@@ -1,3 +1,5 @@
+<? @include('conn.php'); 
+  session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,15 +98,30 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="box">
                 <div class="info">
-                    <h6 align="right">เลขที่</h6>
+                <?
+                  $strSQL9 = "SELECT  *, DATE_FORMAT(date,'%d / %m / %Y') as date FROM orderraw where ordraw_id = '".$_GET['ordraw_id']."' ";
+                  $objQuery9 = mysql_query($strSQL9) or die("Error Query [".$strSQL9."]");
+                  while ($objReSult9 = mysql_fetch_assoc($objQuery9)) {
+                  $strSQL8 = "SELECT  * FROM agent where agent_id = '".$objReSult9['bus_name']."' ";
+                  $objQuery8 = mysql_query($strSQL8) or die("Error Query [".$strSQL8."]");
+                  while ($objReSult8 = mysql_fetch_assoc($objQuery8)) {
+                  $strSQL7 = "SELECT  * FROM branch where branch_id = '".$_SESSION['emp_branch']."' ";
+                  $objQuery7 = mysql_query($strSQL7) or die("Error Query [".$strSQL7."]");
+                  while ($objReSult7 = mysql_fetch_assoc($objQuery7)) {
+                ?>
+                    <h6 align="right">เลขที่ <?echo $_GET['ordraw_id'];?></h6>
                     <h4 class="text-center">ใบความต้องการสั่งซื้อวัตถุดิบ</h4>
-                    <h5 class="text-center">ที่อยู่สาขา ตาม login</h5>
-                    <h5 class="text-center">วันที่สั่งซื้อ</h5>
-                    <p>ชื่อบริษัท</p>
-                    <p>ชื่อผู้ติดต่อ</p>
-                    <p>ที่อยู่</p>
-                    <p>E-mail</p>
-                    <p>เบอร์ติดต่อ</p>
+                    <h5 class="text-center"><?echo $objReSult7['branch_add'];?></h5>
+                    <h5 class="text-center"><?echo $objReSult9['date'];?></h5>
+                    <p>ชื่อบริษัท <?echo $objReSult8['bus_name'];?></p> 
+                    <p>ชื่อผู้ติดต่อ <?if($objReSult8['contract_fname'] == ""){echo "-"; }else{ echo $objReSult8['contract_fname'];}?></p>
+                    <p>ที่อยู่ <?if($objReSult8['bus_add'] == ""){echo "-"; }else{echo $objReSult8['bus_add'];}?></p>
+                    <p>E-mail <?if($objReSult8['mail'] == ""){echo "-"; }else{echo $objReSult8['mail'];}?></p>
+                    <p>เบอร์ติดต่อ <?if($objReSult8['tel'] == ""){echo "-"; }else{echo $objReSult8['tel'];}?></p>
+                    <?
+                  }
+                  }
+                  }?>
                 </div>
                 <table class="table table-bordered">
                   <thead>
@@ -118,34 +135,52 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?
+                  $i=1;
+                  $sum = 0;
+                  $strSQL = "SELECT  * FROM temp_detail_order where ordraw_id = '".$_GET['ordraw_id']."' ";
+                  $objQuery = mysql_query($strSQL) or die("Error Query [".$strSQL."]");
+                  while ($objReSult = mysql_fetch_assoc($objQuery)) {
+                    $strSQL2 = "SELECT  * FROM unit where unit_id = '".$objReSult['unit_id']."'";
+                  $objQuery2 = mysql_query($strSQL2) or die("Error Query [".$strSQL2."]");
+                  while ($objReSult2 = mysql_fetch_array($objQuery2)) {
+                    $strSQL3 = "SELECT  * FROM raw where raw_id = '".$objReSult['raw_id']."'";
+                  $objQuery3 = mysql_query($strSQL3) or die("Error Query [".$strSQL3."]");
+                  while ($objReSult3 = mysql_fetch_array($objQuery3)) {
+                    # code...          
+              ?>
                     <tr>
-                      <td>1</td>
-                      <td>Anna</td>
-                      <td>Pitt</td>
-                      <td>35</td>
-                      <td>New York</td>
-                      <td>USA</td>
+                      <td>
+                                        <?echo $i;?>
+                                    </td>
+                                    <td>
+                                        <?echo $objReSult3['raw_name'];?>
+                                    </td>
+                                    <td>
+                                        <?echo number_format($objReSult['raw_price'], 2, '.', ',');?>
+                                    </td>
+                                    <td>
+                                        <?echo $objReSult['amount'];?>
+                                    </td>
+                                    <td>
+                                        <?echo $objReSult2['unit_name'];?>
+                                    </td>
+                                    <td>
+                                        <?echo number_format($objReSult['amount']*$objReSult['raw_price'], 2, '.',',');?>
+                                    </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Anna</td>
-                      <td>Pitt</td>
-                      <td>35</td>
-                      <td>New York</td>
-                      <td>USA</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Anna</td>
-                      <td>Pitt</td>
-                      <td>35</td>
-                      <td>New York</td>
-                      <td>USA</td>
-                    </tr>
+                    <?
+                    $i= $i+1;
+                  }                
+                }
+                 $total = $objReSult['amount']*$objReSult['raw_price']; 
+          $sum = $sum+$total;
+              }
+                    ?>                    
                   </tbody>
                   <thead>
                     <tr>
-                      <td colspan="5">ราคารวม</td>
+                      <td colspan="5">ราคารวม <?echo $sum;?></td>
                       <td></td>
                     </tr>
                   </thead>

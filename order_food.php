@@ -84,7 +84,7 @@
                                         <li class="list-group-item"><a href="raw.php">วัตถุดิบ</a></li>
                                         <li class="list-group-item"><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a></li>
                                         <li class="list-group-item"><a href="inputraw.php">รับเข้าวัตถุดิบ</a></li>
-                                        <li class="list-group-item"><a href="ream_raw.php">เบิกจ่ายวัตถุดิบ</a></li>
+                                        <li class="list-group-item"><a href="reamraw.php">เบิกจ่ายวัตถุดิบ</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -187,6 +187,7 @@
                                                 $objQuery9 = mysql_query($strSQL9) or die("Error Query [".$strSQL9."]");
                                                 while ($objReSult9 = mysql_fetch_array($objQuery9)) {              
                                             ?>
+                                            
                                                                                 <td>
                                                                                     <?echo $k;?>
                                                                                 </td>
@@ -200,7 +201,7 @@
                                                                                 <td>
                                                                                     <?echo $objReSult4['menu_price'];?>                                              <input type="hidden" name="price[]" value="<?echo $objReSult4['menu_price'];?>>" >                                  
                                                                                 </td>
-                                                                                <td>
+                                                                                <td class="col-md-1">
                                                                                     <div class="input-group number-spinner">
                                                                                         <span class="input-group-btn">
                                                                     <button class="btn2"  onclick="minus(count<?echo "$y";?>)">-</button>
@@ -246,9 +247,9 @@
                                     <tr>
                                         <th>ที่</th>
                                         <th>รายการอาหาร</th>
-                                        <th>ราคา</th>
+                                        <th>ราคา(บาท)
                                         <th>จำนวน</th>                                        
-                                        <th>ราคารวม</th>
+                                        <th>ราคารวม(บาท)</th>
                                         <td>การจัดการ</td>
                                     </tr>
                                 </thead>
@@ -285,11 +286,13 @@
                                                                         <tr>
                                                                             <th>ที่</th>
                                                                             <th>รายการอาหาร</th>
+                                                                            <th></th>
                                                                             <th>จำนวน</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
+                                                                            <td></td>
                                                                             <td></td>
                                                                             <td></td>
                                                                             <td></td>

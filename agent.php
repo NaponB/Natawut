@@ -117,7 +117,7 @@ $Num_Pages = (int)$Num_Pages;
                                         <li class="list-group-item"><a href="raw.php">วัตถุดิบ</a></li>
                                         <li class="list-group-item"><a href="orderraw.php">สั่งซื้อวัตถุดิบ</a></li>
                                         <li class="list-group-item"><a href="inputraw.php">รับเข้าวัตถุดิบ</a></li>
-                                        <li class="list-group-item"><a href="ream_raw.php">เบิกจ่ายวัตถุดิบ</a></li>
+                                        <li class="list-group-item"><a href="reamraw.php">เบิกจ่ายวัตถุดิบ</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -125,7 +125,7 @@ $Num_Pages = (int)$Num_Pages;
                             <li><a href="sell_food.php" class="a">การขายอาหาร</a></li>
                             <li><a href="report.php" class="a">ออกรายงาน</a></li>
                             <li><a href="book_food.php" class="a">สั่งจอง</a></li>
-                            <li><a href="" class="a">ออกจากระบบ</a></li>
+                            <li><a href="logout.php" class="a">ออกจากระบบ</a></li>
                         </ul>
                         <br>
                     </div>
